@@ -58,6 +58,88 @@ index.php
 
 ==================================================================================================================================================================
 
+* Invoking Functions
+--------------------
+	In our last exercise, we saw that when we define a function, the instructions within the code block aren’t executed. Defining a function only tells the computer to associate a 
+	name with a set of instructions. To actually execute this code we’ll need in invoke, or call, the function. Invoking a function is the process of using a function that’s been 
+	defined. Let’s look at an example:
+
+		function greetLearner()
+		{
+  			echo "Hello, Learner!\n";
+  			echo "I hope you're enjoying PHP!\n";
+  			echo "Love, Codecademy";
+		}
+ 
+		greetLearner(); 
+		/*
+		Prints:
+		Hello, Learner!
+		I hope you're enjoying PHP!
+		Love, Codecademy
+		*/
+
+	Below the definition of our greetLearner function, we invoked the function by writing its name followed by an opening and closing parenthesis (( )). This tells the computer to 
+	grab the instructions specified in the function definition and execute them.
+
+	When referring to functions outside of code or in comments, it’s conventional to refer to them by their name followed by parentheses (eg. greetLearner()), so we’ll be doing this 
+	from now on.
+
+	Let’s define and invoke some functions!
+
+index.php
+---------
+<?php
+// Write your code below:
+function inflateEgo() {
+  echo "You are a very good programmer";
+}
+
+inflateEgo();
+
+inflateEgo();
+
+==================================================================================================================================================================
+
+* Return Statements
+-------------------
+	As we build more complicated functions, we’ll often be using them to process data. In order for the data to be useful, functions have the ability to return a value in addition to 
+	performing instructions. Let’s look at an example:
+
+		function countdown() 
+		{
+  			echo "4, 3, 2, 1, ";
+  			return "blastoff!";
+		}
+
+	When the countdown() function is invoked it will print 4, 3, 2, 1,, but what about the string "blastoff!"? This value will be returned. We have a lot of options for what to do 
+	with a returned value. For example, we could capture it in a variable:
+
+		$return_value = countdown(); // Prints: 4, 3, 2, 1, 
+		echo $return_value; // Prints: blastoff!
+
+	This example is a little silly, since we could have just printed the string within the function, but, as we continue to create more complicated functions, the ability to return a 
+	value will become extremely useful.
+
+	Let’s get some practice returning a value from a function!
+
+index.php
+---------
+<?php
+
+// Write your code below:
+function printStringReturnNumber() {
+  echo "Hello Andres";
+  return 10;
+}
+
+$my_num = printStringReturnNumber();
+
+echo $my_num;
+
+==================================================================================================================================================================
+
+
 
 
 
