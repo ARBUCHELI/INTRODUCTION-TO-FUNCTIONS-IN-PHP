@@ -1,0 +1,60 @@
+# INTRODUCTION TO PHP FUNCTIONS
+-------------------------------
+
+* Introduction
+--------------
+	We can think of programs as series of instructions to be performed by the computer. So far in each of our PHP programs, each step has been explicitly laid out in the order we want 
+	it to happen.
+
+	Sometimes we’ll have a group of actions we want to repeat in a program. In these situations, we could copy and paste the lines of code we want to run again, but this isn’t very 
+	efficient. Instead, we should use functions.
+
+	A function is a set of instructions we package as a unit, often with a name, so that we can reuse it. We define a function by writing out the series of steps that should happen 
+	whenever we use the function. To use the function we call or invoke it.
+
+	In this lesson, we’re going to start learning the syntax for defining and invoking PHP functions. We’ll start with simpler functions and work our way to more complex ones. If this 
+	is your first time working with functions, it can feel like a big jump. Take your time and be patient with yourself.
+
+==================================================================================================================================================================
+
+* Defining Functions
+--------------------
+	Let’s get right to it and create our first function:
+
+		function greetLearner()
+		{
+  			echo "Hello, Learner!\n";
+  			echo "I hope you're enjoying PHP!\n";
+  			echo "Love, Codecademy";
+		}
+	
+	Let’s walk through the code above:
+
+		. We used the function keyword to start our function definition.
+
+		. We named the function greetLearner. Function names must start with a letter or underscore, followed by any number of letters, numbers, or underscores.
+
+		. We created a code block with curly brackets ({ }). The code inside this code block will execute when our function is invoked.
+
+		. Within that block we wrote three instructions: echo "Hello, Learner!\n!";, echo "I hope you're enjoying PHP!\n";, and echo "Love, Codecademy";
+
+	With our greetLearner() function defined, we’ll be able to invoke the function multiple times and print those strings without having to copy or retype the three echo statements 
+	again and again.
+
+	A few notes on naming conventions: we typically snake case (separate words with underscores) our variable names, but, in order to easily tell the difference between variables and 
+	functions in our code, we’ll do something different when naming functions. We’re going to use camel case for our function names—we’ll start with a lowercase letter and then 
+	capitalize the first letter of every new word: camelCase vs. snake_case. Another good practice is to name functions in a way that describes what they do—typically we’ll start 
+	function names with a verb.
+
+	In the next exercise, we’ll show you how to invoke a function. For now, let’s get some practice defining them!
+
+index.php
+---------
+<?php
+// Write your code below:
+  function praisePHP () {
+    echo "PHP is awesome";
+  }
+
+==================================================================================================================================================================
+
