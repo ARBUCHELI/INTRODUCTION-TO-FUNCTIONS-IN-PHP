@@ -139,6 +139,130 @@ echo $my_num;
 
 ==================================================================================================================================================================
 
+* More on Return Statements
+---------------------------
+	The return keyword immediately stops a function. This means that any code after a return won’t run.
+
+	Let’s compare two different functions: announceRunning() and announceRunning2(). The first of these is defined as follows:
+
+		function announceRunning()
+		{
+  			echo "The first function is running!\n";
+  			return "This is the return value of the first function.";
+		}
+ 
+		$first_result = announceRunning();
+		echo $first_result;
+
+	Let’s walk through the code above:
+
+		. We defined the function announceRunning().
+
+		. Next, we defined the variable $first_result and assigned as its value the result of invoking the announceRunning() function. This actually did two things. It executed 
+		the function causing "The first function is running!\n" to be printed. It also assigned "This is the return value of the first function." to $first_result.
+
+		. Finally, we printed $first_result.
+
+	That seemed to work as expected. In our terminal we saw:
+
+		The first function is running!
+		This is the return value of the first function.
+
+	Let’s contrast that to the following example:
+
+		function announceRunning2()
+		{
+  			return "This is the return value of the second function.";
+  			echo "P.S., I love you";
+		}
+ 
+		$second_result = announceRunning2();
+		echo $second_result;
+
+	In this example, the string "P.S., I love you" will never be printed! As soon as the return statement is reached, the function will end. So in the terminal, we’d see this output:
+
+		This is the return value of the second function.
+
+	Let’s use this new knowledge to fix some broken code!
+
+index.php
+---------
+<?php
+
+function notFound()
+{
+  echo "ERROR: Page not found!\n";
+  return 404;
+}
+
+function greetLearner()
+{
+  echo "Hello, Learner!\n";
+  echo "I hope you're (still) enjoying PHP!\n";
+  echo "Love, Codecademy\n";
+  return "<3";
+}
+
+// Don't change the code below:
+
+$error = notFound(); 
+$heart = greetLearner();
+
+echo "I received a $error, but it's ok because I also received $heart.";
+
+==================================================================================================================================================================
+
+* Return Values
+---------------
+	The value returned from a function is just that—a value. This means it can be used in any manner we would normally use a value of that type. This can take some getting used to. 
+	Take a look at the following code:
+
+		function returnFive() 
+		{
+  			return 5;
+		}
+ 
+		echo returnFive(); // Prints: 5
+
+	In the code above we defined a silly function, returnFive(); all it does is return the number 5. Then we used echo to print the invoked function. The way that the computer 
+	executes functions and handles their returns can take getting used to, but it’s very similar to what we experienced with numbers and variables:
+
+		echo 5 + 3; // Prints: 8
+ 
+		$num = 5;
+ 
+		echo $num + 3; // Prints: 8
+ 
+		echo returnFive() + 3; // Prints: 8
+
+	A computer evaluates 5 + 3 to 8. In the same manner, when a computer encounters a function invocation, it will execute the code in the function’s body and then evaluate to the 
+	function’s returned value. We need to think of functions as both what they do (the instructions in their code block) and what they return.
+
+	Let’s invoke more functions!
+
+index.php
+---------
+<?php
+function first()
+{
+  return "You did it!\n";
+}
+
+function second()
+{
+  return "You're amazing!\n";
+}
+
+function third()
+{
+  return "You're a coding hero!\n";
+}
+
+// Write your code below:
+echo first(), second(), third();
+
+==================================================================================================================================================================
+
 
 
 
