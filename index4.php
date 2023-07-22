@@ -1,18 +1,22 @@
 <?php
-function first()
+
+function notFound()
 {
-  return "You did it!\n";
+  echo "ERROR: Page not found!\n";
+  return 404;
 }
 
-function second()
+function greetLearner()
 {
-  return "You're amazing!\n";
+  echo "Hello, Learner!\n";
+  echo "I hope you're (still) enjoying PHP!\n";
+  echo "Love, Codecademy\n";
+  return "<3";
 }
 
-function third()
-{
-  return "You're a coding hero!\n";
-}
+// Don't change the code below:
 
-// Write your code below:
-echo first(), second(), third();
+$error = notFound(); 
+$heart = greetLearner();
+
+echo "I received a $error, but it's ok because I also received $heart.";

@@ -263,6 +263,151 @@ echo first(), second(), third();
 
 ==================================================================================================================================================================
 
+* Returning NULL
+----------------
+	What about functions without return statements? Any function without a return returns a special value NULL. NULL is a special data type that stands for the absence of a value.
+
+		function returnNothing() 
+		{
+  			echo "I'm running! I'm running!\n";
+		}
+ 
+		$result = returnNothing(); // Prints: I'm running! I'm running!
+ 
+		echo $result; // Nothing is printed
+
+	Let’s walk through the code above:
+
+		. We defined a function returnNothing()— the returnNothing() function prints "I'm running! I'm running!\n" but has no return statement.
+
+		. We defined the variable $result and assigned it the value returned when we invoke returnNothing().
+
+		. Since we invoked the function, I'm running! I'm running! is printed.
+
+		. Because the function does not have a return statement, the value assigned to $result is NULL
+
+		. Finally, we print the $result variable, but, since its value is NULL, nothing is printed.
+
+	Let’s play around with NULL!
+
+index.php
+---------
+<?php
+
+// Write your code below:
+function createVacuum() {
+  echo "This function doesn't return anything";
+}
+
+echo createVacuum() * 10;
+
+==================================================================================================================================================================
+
+* Parameters
+------------
+	Functions that do exactly the same thing every time they run can save us from having to repeat code in our programs, but functions can do more.
+
+	In the beginning of this lesson, we wrote a greetLearner() function that printed the same friendly greeting every time it was invoked. That’s ok… we guess… But what we’d really 
+	like is to print a customized greeting. We can accomplish this by using parameters!
+
+	When we define a function, we can also define parameters. A parameter is a variable which serves as a placeholder throughout the function’s code block. When the function is 
+	invoked, it’s invoked with a specific value. As the computer executes the function, it replaces each occurrence of the parameter with the value that was passed in. The actual 
+	value passed in is known as an argument.
+
+	Let’s look at an example:
+
+		function sayCustomHello($name)
+		{
+		echo "Hello, $name!";
+		};
+ 
+		sayCustomHello("Aisle Nevertell"); // Prints: Hello, Aisle Nevertell!
+ 
+		sayCustomHello("Codecademy learner"); // Prints: Hello, Codecademy Learner!
+
+	In the code above, we defined the sayCustomHello() function. It has a $name parameter. We invoked the function twice:
+
+		. The first time, we passed in "Aisle Nevertell" as the argument. During that invocation, the function assigned "Aisle Nevertell" to $name so Hello, Aisle Nevertell! was 
+		printed.
+
+		. The second time we invoked the function with the argument "Codecademy learner" so $name was assigned that value and Hello, Codecademy Learner! was printed.
+
+	Let’s get some parameter practice!
+
+index.php
+---------
+<?php
+// Write your code below:
+function increaseEnthusiasm($word) {
+  return "$word!";
+}
+
+echo increaseEnthusiasm("Hi");
+
+function repeatThreeTimes($word) {
+  return "$word$word$word";
+}
+
+echo repeatThreeTimes("hi");
+
+echo increaseEnthusiasm(repeatThreeTimes("hi"));
+
+==================================================================================================================================================================
+
+* Multiple Parameters
+---------------------
+	We can also define functions with multiple parameters.
+
+		function divide($num_one, $num_two)
+		{
+  			return $num_one / $num_two;
+		};
+
+	In the function above, we defined the divide() function. It takes in two number arguments and returns the result of dividing the first parameter by the second. Let’s look at how 
+	we invoke this function:
+
+		echo divide(12, 3); // Prints: 4
+ 
+		echo divide(3, 12); // Prints: 0.25
+
+	In the code above:
+
+		. First, we printed the value returned from invoking our divide() function with 12 and 3 as arguments.
+
+		. Next, we printed the value returned from invoking our divide() function with 3 and 12.
+
+	Notice that the order we pass in the arguments decides which parameters they correspond to—the first argument we pass into divide() will be assigned to $num_one and the second 
+	argument to $num_two.
+
+	Invoking a function with fewer arguments than expected will result in an error:
+
+		function expectTwo($first, $second)
+		{
+  			return "whatever";
+		}
+ 
+		echo expectTwo("test"); // Will result in an error
+
+	Ok! Let’s make functions with multiple parameters!
+
+index.php
+---------
+<?php
+// Write your code below:
+function calculateArea($height, $width) {
+  return $height * $width;
+}
+
+echo calculateArea(2,3);
+
+function calculateVolume($height, $width, $depth) {
+  return $height * $width * $depth;
+}
+
+echo calculateVolume(2,3,4);
+
+==================================================================================================================================================================
+
 
 
 
